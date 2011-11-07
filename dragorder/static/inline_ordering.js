@@ -15,7 +15,7 @@ var InlineOrdering = {
         var ids = [];
         
         for (var i = 0; i < allInlineRows.length; i++) {
-            if (InlineOrdering.jQuery('.inline_ordering_position input', allInlineRows[i]).val()) {
+            if (InlineOrdering.jQuery('.position input', allInlineRows[i]).val()) {
                 ids.push('#' + allInlineRows[i].id);
             }
         }
@@ -40,8 +40,8 @@ var InlineOrdering = {
         });
         //jQuery("div.inline-group").disableSelection();
         
-        InlineOrdering.jQuery('div.inline_ordering_position').hide();
-        InlineOrdering.jQuery('td.inline_ordering_position input').hide();
+        InlineOrdering.jQuery('div.position').hide();
+        InlineOrdering.jQuery('td.position input').hide();
         
         InlineOrdering.jQuery('.add-row a').click(InlineOrdering.update);
         
@@ -56,7 +56,7 @@ var InlineOrdering = {
      */
     update: function(){
         InlineOrdering.getOrderables().each(function(i){
-            InlineOrdering.jQuery(this).find('input[id$=inline_ordering_position]').val(i + 1);
+            InlineOrdering.jQuery(this).find('input[id$=position]').val(i + 1);
         });
     }
     
